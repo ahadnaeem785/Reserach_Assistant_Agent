@@ -12,7 +12,8 @@ from langchain_community.tools.pubmed.tool import PubmedQueryRun
 from langchain_community.document_loaders import ArxivLoader
 from langchain_community.retrievers import ArxivRetriever
 from operator import add
-from langchain_groq import ChatGroq
+# from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from dotenv import load_dotenv
 import os
@@ -21,13 +22,20 @@ import os
 load_dotenv()
 
 # Set OpenAI API key
-os.environ["GROQ_API_KEY"] = os.getenv('GROQ_API_KEY')
+# os.environ["GROQ_API_KEY"] = os.getenv('GROQ_API_KEY')
+os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 
 
-llm = ChatGroq(
-    model="llama-3.1-70b-versatile",
+# llm = ChatGroq(
+#     model="llama-3.1-70b-versatile",
+#     temperature=0.0,
+
+
+# )
+
+llm = ChatOpenAI(
+    model="gpt-4o-mini",
     temperature=0.0,
-
 
 )
 
