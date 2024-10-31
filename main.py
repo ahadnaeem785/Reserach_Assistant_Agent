@@ -154,8 +154,9 @@ def summarize_and_generate_insights(state: ResearchFlowState):
 You are tasked with analyzing the following research papers on the topic: '{state["query"]}'.
 Follow these steps to provide an organized and concise output:
 
-1. **Summary**: Write a concise 100 word summary of the main findings from the research papers.
-2. **Consensus Meter**: Just provide a consensus meter using the format:
+1. **Summary**: Start by briefly defining the topic, "{state['query']}", in one sentence to provide context. Then, write a concise 100-word summary of the main findings from the 
+    research papers, emphasizing the most relevant and insightful aspects. Ensure the summary is clear and engaging, accurately capturing the essence of the findings in a professional tone..
+2. **Consensus Meter**:  Conduct a thorough analysis of the research findings to gauge the overall stance on "{state['query']}". Provide a well-calibrated consensus meter in the following format:
    - Yes: X% 
    - Possibly: Y%
    - No: Z%
