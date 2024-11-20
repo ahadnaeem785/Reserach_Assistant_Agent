@@ -13,8 +13,7 @@ from langchain_community.document_loaders import ArxivLoader
 from langchain_community.retrievers import ArxivRetriever
 import re
 from operator import add
-# from langchain_groq import ChatGroq
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from dotenv import load_dotenv
 import os
@@ -30,22 +29,22 @@ from dataclasses import dataclass
 load_dotenv()
 
 # Set OpenAI API key
-# os.environ["GROQ_API_KEY"] = os.getenv('GROQ_API_KEY')
-os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
+os.environ["GROQ_API_KEY"] = os.getenv('GROQ_API_KEY')
+# os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 
 
-# llm = ChatGroq(
-#     model="llama-3.1-70b-versatile",
-#     temperature=0.0,
-
-
-# )
-
-llm = ChatOpenAI(
-    model="gpt-4o-mini",
+llm = ChatGroq(
+    model="llama-3.1-70b-versatile",
     temperature=0.0,
 
+
 )
+
+# llm = ChatOpenAI(
+#     model="gpt-4o-mini",
+#     temperature=0.0,
+
+# )
 
 
 class Insight(BaseModel):
